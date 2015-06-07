@@ -1,5 +1,4 @@
 (ns megameta.kush
-  (:use [clojure.string :refer [blank?]])
   (:require [net.cgrand.enlive-html :as html]))
 
 (defn- pull-html-resource [url]
