@@ -3,7 +3,7 @@
             [megameta.kush :refer :all]))
 
 
-(deftest test-pull-resource
+(deftest test-pull-html-resource
   (testing "retrieving a URL with kush")
-  (let [response (pull-resource "http://www.google.com")]
+  (let [response (pull-html-resource "http://www.google.com")]
     (is (= clojure.lang.LazySeq (class response)))))
