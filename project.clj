@@ -13,10 +13,10 @@
                  [ring/ring-mock "0.2.0"]
                  [clj-http "1.1.2"]
                  [cheshire "5.5.0"]
-                 [com.taoensso/carmine "2.11.1"]
+                 [redis.clients/jedis "2.7.2"]
                  [enlive "1.1.5"]
                  [org.clojure/tools.namespace "0.2.10"]]
   :ring {:handler megameta.handler/app }
   :target-path "target/%s"
-  :repl-options { :init-ns megameta.repl }
+  :repl-options { :init-ns megameta.core }
   :profiles {:uberjar {:aot :all}})

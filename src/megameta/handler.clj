@@ -1,14 +1,13 @@
 (ns megameta.handler
   (:use [compojure.core]
         [ring.adapter.jetty]
-        [megameta.service]
         [ring.middleware.json])
   (:require [compojure.handler :as handler]
             [ring.util.response :refer [response]]
             [compojure.route :as route]))
 
 
-
+(defn embed [body headers])
 
 (defroutes app-routes
   (GET "/ping" [] (response {:message "PONG"}))
