@@ -17,3 +17,11 @@
     (try
       (parse-string (:body response))
       (catch Exception e nil))))
+
+
+(defn dispatch-request [url]
+  (let [og (get-og-tags url)]
+    (case og
+      nil (get-oembed url)
+      og
+      )))

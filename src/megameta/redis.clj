@@ -4,18 +4,28 @@
 
 (def ^:dynamic *jedis-pool* (ref nil))
 
-(defn initialize-pool [redis-config]
+
+
+(defn initialize-pool
+  "Takes a Hash of your redis configuration. Expects keys :host and :port to exist. Host should be a type String, port should be of type java.Lang.Long "
+  [redis-config]
   (dosync (ref-set *jedis-pool* (JedisPool. (:host redis-config) (:port redis-config)))))
 
-(defn finalize-pool []
+(defn finalize-pool
+  "Closes the Jedis pool"
+  []
   (.destroy *jedis-pool*))
 
-(defn connect []
+(defn connect
+  "Connect to an already initialized Jedis pool. Requires the pool to be initialized first."
+  []
   (let [jedis (.getResource @*jedis-pool*)]
     (.select jedis 0)
     jedis ))
 
-(defn disconnect [jedis]
+(defn disconnect
+  "Disconnect from the Jedis Pool"
+  [jedis]
   (.returnResource @*jedis-pool* jedis))
 
 (def jedis)

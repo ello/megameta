@@ -1,5 +1,5 @@
 (defproject megameta "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+  :description "Megameta does embeds."
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
@@ -15,8 +15,9 @@
                  [cheshire "5.5.0"]
                  [redis.clients/jedis "2.7.2"]
                  [enlive "1.1.5"]
+                 [com.cemerick/friend "0.2.1"]
                  [org.clojure/tools.namespace "0.2.10"]]
   :ring {:handler megameta.handler/app }
   :target-path "target/%s"
-  :repl-options { :init-ns megameta.core }
+  :repl-options { :init-ns megameta.redis }
   :profiles {:uberjar {:aot :all}})
