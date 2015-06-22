@@ -1,6 +1,6 @@
 # megameta
 
-megameta is a service to process URL's for embed and preview data, specifically leveraging the OpenGraph protocol
+megameta is a service to process URL's for embed and preview data. 
 
 ## Installation & Usage
 
